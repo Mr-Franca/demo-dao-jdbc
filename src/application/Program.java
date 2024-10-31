@@ -1,10 +1,9 @@
 package application;
 
-import java.util.Date;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.entities.Department;
 import model.entities.Seller;
 
 public class Program {
@@ -14,10 +13,12 @@ public class Program {
 		SellerDao sellerdao = DaoFactory.createSellerDao(); 
 		System.out.println("Teste update");
 		
-		Seller seller = sellerdao.findById(1);
-		seller.setName("Martha Waine");
-		sellerdao.update(seller);
-		System.out.println("Update complete");
+		System.out.println("Informe o ID a ser deletado: ");
+		Scanner sc = new Scanner(System.in);
+		int id = sc.nextInt();
+		sellerdao.deleteByID(id);;
+		System.out.println("Delete complete");
+	
 		}
 
 }
