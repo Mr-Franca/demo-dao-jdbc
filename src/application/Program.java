@@ -1,23 +1,21 @@
 package application;
 
-import java.util.Scanner;
-
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
-import model.entities.Seller;
+import model.dao.DepartmentDao;
+import model.entities.Department;
 
 public class Program {
 
 	public static void main(String[] args) {
 
-		SellerDao sellerdao = DaoFactory.createSellerDao(); 
-		System.out.println("Teste update");
+		DepartmentDao depDao = DaoFactory.createDepartmentDao();
+		System.out.println("Funções Departamento DAO");
 		
-		System.out.println("Informe o ID a ser deletado: ");
-		Scanner sc = new Scanner(System.in);
-		int id = sc.nextInt();
-		sellerdao.deleteByID(id);;
-		System.out.println("Delete complete");
+		Department d = new Department();
+		d.setName("Eletrodomestics");
+		depDao.insert(d);
+		
+		System.out.println("Insert Dep");
 	
 		}
 
