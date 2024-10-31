@@ -12,10 +12,10 @@ public class Program {
 		System.out.println("Funções Departamento DAO");
 		
 		Department d = new Department();
-		d.setName("Eletrodomestics");
-		depDao.insert(d);
+		d.setId(7);
+		depDao.deleteByID(d.getId());
 		
-		System.out.println("Insert Dep");
+		System.out.println("Delete Dep");
 	
 		}
 
