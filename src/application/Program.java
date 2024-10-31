@@ -1,5 +1,7 @@
 package application;
 
+import java.util.List;
+
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.entities.Department;
@@ -10,13 +12,12 @@ public class Program {
 
 		DepartmentDao depDao = DaoFactory.createDepartmentDao();
 		System.out.println("Funções Departamento DAO");
-		
-		Department d = new Department();
-		d.setId(7);
-		depDao.deleteByID(d.getId());
-		
-		System.out.println("Delete Dep");
-	
+
+		List<Department> list = depDao.findAll();
+		for (Department d : list) {
+			System.out.println(d.getId());
+			System.out.println(d.getName());
 		}
+	}
 
 }
